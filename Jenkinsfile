@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     echo "building image"
-               //     buildImage()
+               //     buildImage() 'belwalrohit642/java-app:2.0'
                 }
             }
         }
