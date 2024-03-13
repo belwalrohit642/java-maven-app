@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
-@Library('jenkins-shared-library')
-def gv
+@Library('jenkins-shared-library') _
 
 pipeline {
     agent any
@@ -13,6 +12,15 @@ pipeline {
                 }
             }
         }
+  stage('Code Checkout') {
+            steps {
+                script {
+                  def workingDir = checkoutCode("https://github.com/belwalrohit642/java-maven-app.git", "master")
+                  echo $workingDir
+                }
+            }
+        }
+        
         stage("build jar") {
             steps {
                 script {
